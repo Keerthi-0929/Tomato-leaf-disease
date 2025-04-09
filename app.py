@@ -63,6 +63,7 @@ def upload_image():
         
         if file and allowed_file(file.filename):
             filename = file.filename
+            os.makedirs('uploads', exist_ok=True)
             file_path = os.path.join('uploads', filename)
             file.save(file_path)
             
